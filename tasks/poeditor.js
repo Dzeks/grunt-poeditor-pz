@@ -179,11 +179,12 @@ function downloadExports(exports, data, handler) {
 }
 
 function downloadExport(url, path, handler) {
-	
-	wget.download(url, path)
-		.on('end', function(output) {
-			handler();
-		});
+	setTimeout(function () {
+		wget.download(url, path)
+			.on('end', function(output) {
+				handler();
+			});
+	}, 500);
 }
 
 function confLanguages(obj, opts) {
