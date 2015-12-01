@@ -184,7 +184,7 @@ function downloadExport(url, path, handler) {
 			.on('end', function(output) {
 				handler();
 			});
-	}, 500);
+	}, 1000);
 }
 
 function confLanguages(obj, opts) {
