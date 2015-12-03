@@ -11,7 +11,7 @@
 'use strict';
 
 var fs = require('fs'),
-	wget = require('wget'),
+	Download = require('download'),
 	https = require('https'),
 	colors = require('colors'),
 	request = require('request'),
@@ -179,12 +179,14 @@ function downloadExports(exports, data, handler) {
 }
 
 function downloadExport(url, path, handler) {
-	setTimeout(function () {
-		wget.download(url, path)
-			.on('end', function(output) {
-				handler();
-			});
-	}, 1000);
+	var name = path.substr(path.lastIndexOf('/') + 1),
+		dir = path.substr(0, path.length - name.length);
+
+	Download()
+		.get(url)
+		.dest(dir)
+		.rename(name)
+		.run(handler);
 }
 
 function confLanguages(obj, opts) {

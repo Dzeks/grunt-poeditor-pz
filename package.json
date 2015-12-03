@@ -1,7 +1,7 @@
 {
   "name": "grunt-poeditor-pz",
   "description": "Call POEditor's APIs, upload & download from a grunt task",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "homepage": "https://github.com/Philoozushi/grunt-poeditor-pz",
   "author": {
     "name": "Philippe Vignau",
@@ -28,7 +28,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "wget": "0.0.1",
+    "download": "4.4.3",
     "request": "^2.53.0",
     "colors": "^0.6.2"
   },
